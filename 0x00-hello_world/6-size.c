@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
- * prints the size of each data type in the computer
- * Main: makes use of printf and sizeof to print it
- * Return: 0 if properly executed else a non zero value
+ *main - Entry point
+ *Description:'Output the size of dataTypes'
+ *Return: Always 0 (Success)
  */
 int main(void)
 {

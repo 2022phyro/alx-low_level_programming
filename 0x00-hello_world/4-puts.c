@@ -1,9 +1,9 @@
 #include <stdio.h>
 /**
- * print out a sentence using the puts function
- * main - use puts function to display program result
- * return: return zero if executed properly, else a non-zero value
- */ 
+ *main - Serves as the entry point for the codes
+ *Description:'prints out a phrase uaing puts'
+ *Return: Return zero if executed properly, else a non-zero value
+ */
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
