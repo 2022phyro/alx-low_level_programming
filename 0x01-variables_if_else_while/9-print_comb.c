@@ -9,13 +9,19 @@ int main(void)
 {
 	int ch;
 
-	for (ch = 48; ch < 58;)
+	for (ch = 48; ch <= 57; ch++)
 	{
-		putchar(ch);
-		putchar(',');
-		putchar(' ');
-		ch++;
+		if (ch < 57)
+		{
+			putchar(ch);
+			putchar(',');
+			putchar(' ');
+		}
+		if (ch == 57)
+		{
+			putchar(ch);
+		}
+		
 	}
-	putchar('\n');
 	return (0);
 }
