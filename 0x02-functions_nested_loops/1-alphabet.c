@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * main - prints all the leyters of the alphabet
+ * print_alphabet - prints all the leyters of the alphabet
  * Description: uses a loop
  * Return: 0 if success
  */
