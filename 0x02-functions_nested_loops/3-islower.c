@@ -6,16 +6,14 @@
  *_islower - checks if the character is in lower case
  *Descruptio:'a function'
  *Return: 1 if accurate
+ *@c: the letter to be checked
  */
 int _islower(int c)
 {
-	if (islower(c))
+	if (c >= 'a' && c <='z')
 	{
-		_putchar('1');
+		return (1);
 	}
 	else
-	{
-		_putchar('0');
-	}
-return (c);
+		return (0);
 }
