@@ -5,11 +5,10 @@
  * print_last_digit - it prints the lat digit of each number
  * Description:'A new function'
  * Return: 0 if positive.
- * @int: the data type to be checked
+ * @m: the data type to be checked
  */
-int print_last_digit(int)
+int print_last_digit(int m)
 {
-	int m;
 	int j;
 
 	j = m % 10;
