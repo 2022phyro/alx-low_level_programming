@@ -4,12 +4,8 @@
 /**
  * main - prints putchar
  * Description:'Prints putchar'
- * Return: 0 if correct
+ * Return: 0 if successful
  */
-int _putchar(char c)
-{
-        return (write(1, &c, 1));
-}
 int main(void)
 {
 	_putchar('_');
