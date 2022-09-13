@@ -11,22 +11,20 @@ void print_to_98(int n)
 {
 	for (n = n; n <= 97; n++)
 	{
-		_putchar(n);
+		printf("%d", n);
 		if (!(n == 98))
 		{
-			_putchar(',');
-			_putchar(' ');
+			printf(", ");
 		}
 		if (n == 98)
 			continue;
 	}
 	for (n = n; n >= 98; n--)
 	{
-		_putchar(n);
+		printf("%d", n);
 		if (!(n == 98))
 		{
-			_putchar(',');
-			_putchar(' ');
+			printf(", ");
 		}
 	}
 }
