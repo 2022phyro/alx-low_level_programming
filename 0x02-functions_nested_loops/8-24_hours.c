@@ -15,11 +15,12 @@ void jack_bauer(void)
 			{
 				_putchar(t / 10 + '0');
 				_putchar(t % 10 + '0');
-				_putchar('.');
+				_putchar(':');
 				_putchar(u / 10 + '0');
 				_putchar(u % 10 + '0');
-			}
-			if (!(t == 23 && u == 59))
 				_putchar('\n');
+			}
+			if (t == 23 && u == 59)
+				continue;
 		}
 }
