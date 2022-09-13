@@ -1,10 +1,9 @@
-
-#include <unistd.h>
-#include <stdio.h>
+#ifndef MAIN_H
+#define MAIN_H
 /**
  * main - a header file
  * Description ?
- * Return: 
+ * Return:
  */
 int _putchar(char c);
 void print_alphabet(void);

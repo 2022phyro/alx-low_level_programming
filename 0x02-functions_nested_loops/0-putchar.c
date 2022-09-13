@@ -11,15 +11,14 @@ int _putchar(char c)
 }
 int main(void)
 {
-	int a, b, c, d, e, f, g,  h, i;
-		a = _putchar('_');
-		b = _putchar('p');
-		c = _putchar('u');
-		d = _putchar('t');
-		e = _putchar('c');
-		f = _putchar('h');
-		g = _putchar('a');
-		h = _putchar('r');
-		i = _putchar('\n');
-return (0);
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
+	return (0);
 }
