@@ -5,6 +5,10 @@
  * Description:'Prints putchar'
  * Return: 0 if correct
  */
+int _putchar(char c)
+{
+        return (write(1, &c, 1));
+}
 int main(void)
 {
 		_putchar('_');
