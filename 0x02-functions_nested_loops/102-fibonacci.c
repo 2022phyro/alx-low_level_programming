@@ -12,14 +12,14 @@ int main(void)
 	long int c = a + b;
 
 	printf("%ld, %ld, ", a, b);
-	while (count < 50)
+	while (count < 48)
 	{
 		printf("%ld", c);
 		count++;
 		a = b;
 		b = c;
 		c = a + b;
-		if (count < 50)
+		if (count < 48)
 		{
 			printf(", ");
 		}
