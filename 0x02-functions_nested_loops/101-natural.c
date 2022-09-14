@@ -6,17 +6,13 @@
  */
 int main(void)
 {
-	int num1;
+	int num1, num2;
 
 	for (num1 = 0; num1 < 1024; num1++)
 	{
 		if ((num1 % 3 == 0) || (num1 % 5 == 0))
-		{
-			printf("%d", num1);
-			if (num1 < 1023)
-				printf(", ");
-		}
+			num2 += num1;
 	}
-	printf("\n");
+	printf("%d\n", num2);
 	return (0);
 }
