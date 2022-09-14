@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "main.h"
-void times_tables(void)
+void times_table(void)
 {
 	int m, n, o;
 
