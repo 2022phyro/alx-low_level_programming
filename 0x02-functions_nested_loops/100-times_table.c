@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * print_times_tables prints the time table of an integer
+ * print_times_table -  prints the time table of an integer
  * Description:'does the above in a new function'
  * Return: nothing
  * @n: the integer to be printed
  */
-void print_times_tables(int n)
+void print_times_table(int n)
 {
 	if (!(n > 15 || n < 0))
 	{
