@@ -8,17 +8,22 @@
  */
 void print_diagonal(int n)
 {
-	int line;
+	int line, spec;
 
 	if (n > 0)
 	{
 		for (line = 0; line <= n; line++)
 		{
-			`
-			_putchar('\\');
-			_putchar(' ');
-
+			for (spec = 0; spec <= n; spec++)
+			{
+				if (line == spec)
+					_putchar('\\');
+				else
+					_putchar(' ');
+			}
+			_putchar('\n');
 		}
 	}
-	_putchar('\n');
+	else
+		_putchar('\n');
 }
