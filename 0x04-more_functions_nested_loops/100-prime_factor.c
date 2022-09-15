@@ -7,9 +7,14 @@
  */
 int main(void)
 {
-	unsigned int max, i, a = 612852475143;
+	long int max;
+	long int i;
+	long int a;
 
-	while(a % 2 == 0)
+	a = 612852475143;
+	max = -1;
+
+	while (a % 2 == 0)
 	{
 		max = 2;
 		a = a / 2;
@@ -24,8 +29,8 @@ int main(void)
 	}
 	if (a > 2)
 	{
-		max = n;
+		max = a;
 	}
-	printf("%d", max);
+	printf("%ld", max);
 	return (0);
 }
