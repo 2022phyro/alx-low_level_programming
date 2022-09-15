@@ -1,26 +1,31 @@
 #include <stdio.h>
+#include <math.h>
 /**
- * main - prints 1 - 100 and zizz and buzz and fizz buzz
- * Description:'Fizz for multiples of 3, Buzz for 5 and fizzbuzz for 15'
+ * main - prints the largest prime factor of a number
+ * Description:'A program to find the largest prime factor of a given integer'
  * Return: 0 if accurate
  */
 int main(void)
 {
-	int a;
+	unsigned int max, i, a = 612852475143;
 
-	for (a = 1; a <= 100; a++)
+	while(a % 2 == 0)
 	{
-		if ((a % 15 == 0))
-			printf("FizzBuzz");
-		else if (a % 3 == 0)
-			printf("Fizz");
-		else if (a % 5 == 0)
-			printf("Buzz");
-		else
-			printf("%d", a);
-		if (!(a == 100))
-			printf(" ");
+		max = 2;
+		a = a / 2;
 	}
-	printf("\n");
+	for (i = 3; i <= sqrt(a); i = i + 2)
+	{
+		while (a % i == 0)
+		{
+			max = i;
+			a = a / i;
+		}
+	}
+	if (a > 2)
+	{
+		max = n;
+	}
+	printf("%d", max);
 	return (0);
 }
