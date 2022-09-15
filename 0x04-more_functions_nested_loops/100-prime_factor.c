@@ -31,6 +31,6 @@ int main(void)
 	{
 		max = a;
 	}
-	printf("%ld", max);
+	printf("%ld\n", max);
 	return (0);
 }
