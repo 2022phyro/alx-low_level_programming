@@ -1,0 +1,1 @@
+This repository contains all alx projects concerning the concepts of pointers, arrays and strings in C programming language. it contains all the asignments and the commits are based on the numbers or questions which they answer.
