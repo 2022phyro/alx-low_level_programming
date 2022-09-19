@@ -10,8 +10,6 @@ void print_rev(char *s)
 {
 	int i, index, j;
 
-	i = 0;
-
 	for (i = 0; s[i] != '\0'; i++)
 		;
 	index = i;
