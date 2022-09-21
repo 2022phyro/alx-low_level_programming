@@ -1,1 +1,0 @@
-This repository contains all our assignments and it is a continuation of all the work so far on pointers, arrays and strings
