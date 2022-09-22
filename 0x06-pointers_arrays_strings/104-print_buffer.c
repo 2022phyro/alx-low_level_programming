@@ -1,15 +1,15 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
+
 /**
- * print_buffer - it prints a buffer
- * @b: the buffer to be printed
- * @size: the size of the buffer
- * Return:Nothing
- * Description:'A function'
+ * print_buffer - prints a specified buffer
+ * @b: buffer.
+ * @size: size of buffer.
+ * Return: nothing.
  */
 void print_buffer(char *b, int size)
 {
-	int j, k, l;
+	int j, k, i;
 
 	if (size <= 0)
 		printf("\n");
@@ -17,7 +17,7 @@ void print_buffer(char *b, int size)
 	{
 		for (j = 0; j < size; j += 10)
 		{
-			printf("%.8x", j);
+			printf("%.8x:", j);
 			for (k = j; k < j + 10; k++)
 			{
 				if (k % 2 == 0)
@@ -25,17 +25,17 @@ void print_buffer(char *b, int size)
 				if (k < size)
 					printf("%.2x", *(b + k));
 				else
-					printf(" ");
+					printf("  ");
 			}
 			printf(" ");
-			for (l = j; l < j + 10; l++)
+			for (i = j; i < j + 10; i++)
 			{
-				if (l >= size)
+				if (i >= size)
 					break;
-				if (*(b + l) < 32 || *(b + 1) > 126)
+				if (*(b + i) < 32 || *(b + i) > 126)
 					printf("%c", '.');
 				else
-					printf("%c", *(b + 1));
+					printf("%c", *(b + i));
 			}
 			printf("\n");
 		}
