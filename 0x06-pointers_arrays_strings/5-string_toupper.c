@@ -12,7 +12,9 @@ char *string_toupper(char *s)
 
 	for (k = 0; s[k] != '\0'; k++)
 	{
+		if (s[k] >= 97 && s[k] <= 122)
 		s[k] = s[k] - 32;
 	}
+	s[k] = '\0';
 	return (s);
 }
