@@ -1,9 +1,9 @@
 #include <stdio.h>
-#include <stdlib.h>
-int main(int argc, char *argv[])
+int main(int argc, char _attribute_ ((unused)) *argv[])
 {
-	if (argc !=  3)
-	{
-		printf(
+	int i = argc + 1;
+	if (i == 2)
+	printf("Error");
+	return(argc);
 }
 	

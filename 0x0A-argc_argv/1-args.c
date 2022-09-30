@@ -8,8 +8,10 @@
  * @argv: the arguments
  * Return: nothing
  */
-int main(int argc, char *argv[] _attribute_((unused)))
+int main(int argc, char *argv[])
 {
+	(void)argv;
+
 	if (argc > 1)
 		printf("%d\n", argc - 1);
 	else
