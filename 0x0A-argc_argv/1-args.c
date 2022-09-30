@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- * main - this prints out the name of the file
+ * main - this prints out the number of arguments to the program
  *
  * @argc: the number of arguments to the function
  * @argv: the arguments to the functio
@@ -10,6 +10,9 @@
  */
 int main(int argc, char *argv[])
 {
-	puts(argv[0]);
+	if (argc > 1)
+		printf("%d\n", argc - 1);
+	else
+		printf("%d\n", 0);
 	return (0);
 }
