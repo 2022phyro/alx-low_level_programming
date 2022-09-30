@@ -5,10 +5,10 @@
  * main - this prints out the number of arguments to the program
  *
  * @argc: the number of arguments to the function
- * @argv: the arguments to the functio
+ * @argv: the arguments
  * Return: nothing
  */
-int main(int argc, char *argv[])
+int main(int argc, char *argv[] _attribute_((unused)))
 {
 	if (argc > 1)
 		printf("%d\n", argc - 1);

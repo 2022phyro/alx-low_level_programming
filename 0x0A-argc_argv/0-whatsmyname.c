@@ -4,11 +4,11 @@
 /**
  * main - this prints out the name of the file
  *
- * @argc: the number of arguments to the function
- * @argv: the arguments to the functio
+ * @argv: the arguments to the function
+ * @argc: the numner of arguments
  * Return: nothing
  */
-int main(int argc, char *argv[])
+int main(int argc _attribute_((unused)), char *argv[])
 {
 	puts(argv[0]);
 	return (0);

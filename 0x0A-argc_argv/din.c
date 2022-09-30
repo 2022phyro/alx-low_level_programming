@@ -2,10 +2,8 @@
 #include <stdlib.h>
 int main(int argc, char *argv[])
 {
-	int count;
-	for (count = 0; count < argc; count++)
+	if (argc !=  3)
 	{
-		printf("%s\n", argv[count]);
-	}
-	return 0;
+		printf(
 }
+	
