@@ -18,16 +18,7 @@ int main(int argc, char *argv[])
 		printf("%s\n", "Error");
 		return (1);
 	}
-/*
-	*	for (j = 0; argv[1][j] != '\0'; j++)
-	*	{
-	*		if (!(argv[1][j] >= '0' && argv[i][j] <= '9'))
-	*		{
-	*			printf("%s\n", "Error");
-	*			return (1);
-	*		}
-	*	}
-*/
+
 	k = atoi(argv[1]);
 	flag1 = (k / 25);
 	flag2 = (k % 25);
