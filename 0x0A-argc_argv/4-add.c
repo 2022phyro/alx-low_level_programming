@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- * main - multiplies two arguments
+ * main - adds all the arguments and print Error if the arg is not a number 
  *
  * @argc: the number of arguments to the function
  * @argv: the arguments to the functio
