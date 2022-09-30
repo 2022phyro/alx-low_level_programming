@@ -1,9 +1,6 @@
 #include <stdio.h>
-int main(int argc, char _attribute_ ((unused)) *argv[])
+int main()
 {
-	int i = argc + 1;
-	if (i == 2)
-	printf("Error");
-	return(argc);
+	printf("%d", '48');
 }
 	
