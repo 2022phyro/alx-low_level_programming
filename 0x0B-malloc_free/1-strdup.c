@@ -1,0 +1,33 @@
+#include <stdlib.h>
+#include "main.h"
+
+/**
+ * *_strdup - this function mimicks the strcpy c using malloc.
+ *
+ * @str: the string to be copied
+ * Return: a pointer to the copy
+ */
+char *_strdup(char *str)
+{
+	char *p;
+	int i;
+
+	for (i = 0; *(str + i) != '\0'; i++)
+		;
+
+	p  = malloc(sizeof(*p) * i);
+
+	if (str == NULL || p == NULL)
+	{
+		return (NULL);
+	}
+	int j;
+
+	for (j = 0; *(str + j) != '\0'; j++)
+	{
+		*(p + j) = *(str + j);
+	}
+	*(p + j) = '\0';
+
+	return (p);
+}
