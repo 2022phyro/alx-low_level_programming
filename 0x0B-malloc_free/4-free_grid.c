@@ -3,6 +3,7 @@
 /**
  * free_grid - free the previous memory allocated to a grid
  *
+ * @grid: the array memory to be freed
  * @height: the number of rows
  * Return: nothing
  */

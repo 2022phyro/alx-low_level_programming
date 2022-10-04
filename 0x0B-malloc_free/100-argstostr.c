@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- * *argostostr - concatenates all arguments of the program
+ * *argstostr - concatenates all arguments of the program
  *
  * @ac: the number of arguments
  * @av: the arguments;
