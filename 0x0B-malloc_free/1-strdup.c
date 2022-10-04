@@ -12,12 +12,17 @@ char *_strdup(char *str)
 	char *p;
 	int i, j;
 
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+
 	for (i = 0; *(str + i) != '\0'; i++)
 		;
 
 	p  = malloc(sizeof(*p) * (i + 1));
 
-	if (str == NULL || p == NULL)
+	if (p == NULL)
 	{
 		return (NULL);
 	}
