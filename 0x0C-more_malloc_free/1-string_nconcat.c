@@ -28,26 +28,28 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	int s, i, j, q;
 	unsigned int t;
 	char *str;
-	char *st = "";
 
 	s = _strlen(s1);
 	t = _strlen(s2);
-	q = n;
+	q = 0;
 
 	if (s1 == NULL)
-	{
-		return (st);
-	}
+		s1 = "";
+
 	if (s2 == NULL)
-	{
-		return (st);
-	}
+		s2 = "";
+
 	if (n >= t)
 		q = t;
+	else
+		q = n;
 	str = malloc(sizeof(*str) * (q + s) + 1);
 
 	if (str == NULL)
+	{
+		free(str);
 		return (NULL);
+	}
 	for (i = 0; i < s; i++)
 		*(str + i) = s1[i];
 	for (j = 0; j < q; j++)

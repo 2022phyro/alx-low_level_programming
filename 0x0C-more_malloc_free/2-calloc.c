@@ -6,7 +6,7 @@
  *
  * @s: the memory to be set
  * @c: the value
- * len: the limit
+ * @len: the limit
  * Return: a pointer to the set memory
  */
 void *Memset(void *s, int c, unsigned int len)
