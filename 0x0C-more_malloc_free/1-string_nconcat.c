@@ -28,15 +28,20 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	int s, i, j, q;
 	unsigned int t;
 	char *str;
+	char *st = "";
 
 	s = _strlen(s1);
 	t = _strlen(s2);
 	q = n;
 
 	if (s1 == NULL)
-		s1 = "";
+	{
+		return (st);
+	}
 	if (s2 == NULL)
-		s2 = "";
+	{
+		return (st);
+	}
 	if (n >= t)
 		q = t;
 	str = malloc(sizeof(*str) * (q + s) + 1);
