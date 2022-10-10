@@ -1,4 +1,3 @@
-#ifndef PIE
-#define PIE
-#define PI 3.1415926535
+#ifndef PI
+#define PI 3.14159265359
 #endif
