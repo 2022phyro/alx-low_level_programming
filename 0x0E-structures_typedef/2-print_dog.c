@@ -14,7 +14,7 @@ void print_dog(struct dog *d)
 	met = d;
 
 	if (met == NULL)
-		printf("\n");
+		return;
 	if (met->name == NULL)
 		printf("Name: (nil)\n");
 	else
