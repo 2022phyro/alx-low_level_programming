@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "3-main.h"
+#include "3-calc.h"
 /**
  * main - a basic calculator
  *
