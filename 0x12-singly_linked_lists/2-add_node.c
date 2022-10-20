@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "lists.h"
 /**
  * _strlen - returns the lenght of the string
@@ -7,7 +8,7 @@
  * @s: the string to be returned
  * Return: the number of chars in it
  */
-unsigned int _strlen(char *s)
+unsigned int _strlen(const char *s)
 {
 	unsigned int i;
 
