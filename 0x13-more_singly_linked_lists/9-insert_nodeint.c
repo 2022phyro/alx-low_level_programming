@@ -53,10 +53,9 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	size_t size;
 
 	size = listint_len((*head));
-	previous = NULL;
 
 	if (idx > size)
-	return (NULL);
+		return (NULL);
 	if (idx == 0)
 	{
 		target = (*head);
