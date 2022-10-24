@@ -48,11 +48,8 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-<<<<<<< HEAD
+
 	listint_t *previous, *target, *nez;
-=======
-	listint_t *previous, *target;
->>>>>>> faf639d7194ea6733e8f20b4321b768d2be20dac
 	size_t size;
 
 	size = listint_len((*head));
@@ -62,33 +59,20 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	return (NULL);
 	if (idx == 0)
 	{
-<<<<<<< HEAD
 		target = (*head);
 		previous = NULL;
-=======
-		previous->next = NULL;
-		previous->n = n;
-		(*head) = previous;
-		return ((*head));
->>>>>>> faf639d7194ea6733e8f20b4321b768d2be20dac
 	}
 	else
 	{
 		previous = get_nodeint_at_index((*head), idx - 1);
-		target = (listint_t *)(malloc(sizeof(listint_t)));
-		if (target == NULL)
-			return (NULL);
-		target->n = n;
-		target->next = previous->next;
-
-		previous->next = target;
+		target = previous->next;
 	}
-<<<<<<< HEAD
+
 	nez = (listint_t *)(malloc(sizeof(listint_t)));
+	if (nez == NULL)
+		return (NULL);
 	nez->n = n;
 	previous->next = nez;
 	nez->next = target;
-=======
->>>>>>> faf639d7194ea6733e8f20b4321b768d2be20dac
 	return ((*head));
 }
