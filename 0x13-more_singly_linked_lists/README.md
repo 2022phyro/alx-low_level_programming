@@ -1,0 +1,1 @@
+This directory contains more practie work on using linked lists. IN this scenario, istead of using a string as our data, we are using, an integer which will allow us to perform operations like addititon and subtractions on the list.
