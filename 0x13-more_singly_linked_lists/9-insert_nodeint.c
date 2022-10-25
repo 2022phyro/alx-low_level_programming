@@ -1,77 +1,46 @@
-#include <stdio.h>
 #include "lists.h"
-/**
- * listint_len - returns the lenght of a linked list
- *
- * @h: the head o fthe list
- * Return: the lenght
- */
-size_t listint_len(const listint_t *h)
-{
-	if (h == NULL)
-		return (0);
-	return (1 + listint_len(h->next));
-}
 
 /**
- * *get_nodeint_at_index - gets the node at a given index
+ * insert_nodeint_at_index - Inserts a new node to a listint_t
+ *                           list at a given position.
+ * @head: A pointer to the address of the
+ *        head of the listint_t list.
+ * @idx: The index of the listint_t list where the new
+ *       node should be added - indices start at 0.
+ * @n: The integer for the new node to contain.
  *
- * @head: the head node
- * @index: the index number
- * Return: a pointer to the given node
- */
-listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
-{
-	unsigned int i;
-
-	if (head == NULL)
-		return (NULL);
-	if (index == 0)
-		return (head);
-	i = 0;
-	while (i < index)
-	{
-		if (head == NULL)
-			return (NULL);
-		head = head->next;
-		i++;
-	}
-	return (head);
-}
-/**
- * *insert_nodeint_at_index - inserts a node at a given index
- *
- * @head: the head node
- * @idx: the index
- * @n: the data
- * Return: the new node
+ * Return: If the function fails - NULL.
+ *         Otherwise - the address of the new node.
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
+	listint_t *new, *copy = *head;
+	unsigned int node;
 
-	listint_t *previous, *target, *nez;
-	size_t size;
-
-	size = listint_len((*head));
-
-	if (idx >= size - 1 || (*head) == NULL)
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
 		return (NULL);
+
+	new->n = n;
+
 	if (idx == 0)
 	{
-		target = (*head);
-		previous = NULL;
-	}
-	else
-	{
-		previous = get_nodeint_at_index((*head), idx - 1);
-		target = previous->next;
+		new->next = copy;
+		*head = new;
+		return (new);
 	}
 
-	nez = (listint_t *)(malloc(sizeof(listint_t)));
-	if (nez == NULL)
-		return (NULL);
-	nez->n = n;
-	previous->next = nez;
-	nez->next = target;
-	return ((*head));
+	for (node = 0; node < (idx - 1); node++)
+	{
+		if (copy == NULL || copy->next == NULL)
+			return (NULL);
+
+		copy = copy->next;
+	}
+
+	new->next = copy->next;
+	copy->next = new;
+
+	return (new);
 }
+

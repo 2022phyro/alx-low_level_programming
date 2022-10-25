@@ -1,45 +1,41 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "lists.h"
-/**
- * *detect - detects the presence of a loop
- *
- * @h: the head node of the loop
- * Return: a pointer to the loop
- */
-listint_t *detect(listint_t *h)
-{
-	listint_t *S, *F;
 
-	while (S && F && F->next)
-	{
-		S = S->next;
-		F = F->next->next;
-		if (F == S)
-			return (F);
-	}
-	return (NULL);
-}
 /**
- * *find_listint_loop - finds the loop
+ * find_listint_loop - Finds the loop contained in
+ *                     a listint_t linked list.
+ * @head: A pointer to the head of the listint_t list.
  *
- * @head: the head node
- * Return: the start of the loop;
+ * Return: If there is no loop - NULL.
+ *         Otherwise - the address of the node where the loop starts.
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *mark;
-	listint_t *temp;
+	listint_t *tortoise, *hare;
 
-	mark = detect(head);
-	temp = head;
-
-	if (mark == NULL)
+	if (head == NULL || head->next == NULL)
 		return (NULL);
-	while (temp != mark)
+
+	tortoise = head->next;
+	hare = (head->next)->next;
+
+	while (hare)
 	{
-		temp = temp->next;
-		mark = mark->next;
+		if (tortoise == hare)
+		{
+			tortoise = head;
+
+			while (tortoise != hare)
+			{
+				tortoise = tortoise->next;
+				hare = hare->next;
+			}
+
+			return (tortoise);
+		}
+
+		tortoise = tortoise->next;
+		hare = (hare->next)->next;
 	}
-	return (temp);
+
+	return (NULL);
 }
