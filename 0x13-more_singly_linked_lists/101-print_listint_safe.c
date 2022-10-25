@@ -55,7 +55,7 @@ size_t print_listint_safe(const listint_t *head)
 	size_t flag, n;
 
 	if (head == NULL)
-		exit(98);
+		return (0);
 	flag = 0;
 	n = 0;
 	mark = find_listint(head);
