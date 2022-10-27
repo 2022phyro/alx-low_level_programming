@@ -38,11 +38,14 @@ int get_bit(unsigned long int n, unsigned int index)
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	if (get_bit(*n, index) == 1)
+	unsigned long int k;
+
+	k = (*n);
+	if (get_bit(k, index) == 1)
 	{
-		*n = *n ^ (1 << index);
+		(*n) = k ^ (1 << index);
 	}
-	else if (get_bit(*n, index) == -1)
+	else if (get_bit(k, index) == -1)
 	{
 		return (-1);
 	}
