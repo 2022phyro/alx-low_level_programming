@@ -1,40 +1,46 @@
 #include <stdio.h>
+#include "main.h"
 /**
- * toint - converts a char to an int
+ * power - finds the power of a number
  *
- * @c: the char to be converted
- * Return: the converted char
+ * @base: the number
+ * @expo: the exponent
+ * Return: the new number
  */
-unsigned int toint(char c)
+unsigned int power(unsigned int base, unsigned int expo)
 {
-	return (c - '0');
+	if (base == 0)
+		return (0);
+	if (base == 1)
+		return (1);
+	if (expo == 0)
+		return (1);
+	if (expo == 1)
+		return (base);
+	return (base * power(base, expo - 1));
 }
 /**
- * binary_to_uint - converts a binary to decimal
+ * binary_to_uint - converts a  binary string to an int
  *
  * @b: the string to be converted
- * Return: the new decimal
+ * Return: the new number
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int i, k, l;
+	unsigned int length, num;
+	int i;
 
-	l = 0;
-	k = 1;
-
-	if (b == NULL)
+	length = num = 0;
+	if (b == (void *)0)
 		return (0);
-	for (i = 0; b[i] != '\0'; i++)
-	{
-		if (!(b[i] == '0' || b[i] == '1'))
+
+	for (length = 0; b[length]; length++)
+		if (b[length] != '0' && b[length] != '1')
 			return (0);
-		k *= 2;
-	}
-	k /= 2;
-	for (i = 0; b[i] != '\0'; i++)
-	{
-		l += (toint(b[i]) * k);
-		k /= 2;
-	}
-	return (l);
+	if (length == 0)
+		return (0);
+	for (i = --length; i >= 0; i--)
+		if (b[i] == '1')
+			num += power(2, length - i);
+	return (num);
 }
