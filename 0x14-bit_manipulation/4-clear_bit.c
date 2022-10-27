@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
 /**
  * bit_len - gives the number of bits
@@ -47,4 +46,22 @@ int get_bit(unsigned long int n, unsigned int index)
 			return ((n & 1));
 	}
 	return (-1);
+}
+/**
+ * clear_bit -  Assign the bit to zero
+ *
+ * @index: the index
+ * @n: the number
+ */
+int clear_bit(unsigned long int *n, unsigned int index)
+{
+	if (get_bit(*n,index) == 1)
+	{
+		*n = *n ^ (1 << index);
+	}
+	else if (get_bit(*n, index) == -1)
+	{
+		return (-1);
+	}
+	return (1);
 }
