@@ -52,10 +52,11 @@ int get_bit(unsigned long int n, unsigned int index)
  *
  * @index: the index
  * @n: the number
+ * Return: 1 if successful
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	if (get_bit(*n,index) == 1)
+	if (get_bit(*n, index) == 1)
 	{
 		*n = *n ^ (1 << index);
 	}
