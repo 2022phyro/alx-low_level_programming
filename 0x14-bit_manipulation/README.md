@@ -20,8 +20,8 @@ functions written in the project.
 [2-get_bit.c](./2-get_bit.c)          |  `int get_bit(unsigned long int n, unsigned int index)`             |`It returns the bit at the specified index`                       |
 [3-set_bit.c](./3-set_bit.c)          |  `int set_bit(unsigned long int *n, unsigned int index)`            |`It sets the bit at the given index to one`                       |
 [4-clear_bit.c](./4-clear_bit.c)        |  `int clear_bit(unsigned long int *n, unsigned int index)`          |`It sets the bit at the index to zero`                            |
-[5-flip_bit.c](./5-flip_bit.c)         |  `unsigned int flip_bits(unsigned long int n, unsigned long int m)` |`It returns the number of bits needed to flip the number n to m`  |
-[6-get_endianness.c](./6-get_endianness.c)   |  `int get_endianness(void)                                          |`It checks the endianness of the local machine`                   |
+[5-flip_bit.c](./5-flip_bits.c)         |  `unsigned int flip_bits(unsigned long int n, unsigned long int m)` |`It returns the number of bits needed to flip the number n to m`  |
+[6-get_endianness.c](./100-get_endianness.c)   |  `int get_endianness(void)                                          |`It checks the endianness of the local machine`                   |
 [101-password](./101-password)         |   `None : there is no function and this is not a C file             |`It contains the password for the file crackme3`                  |
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
