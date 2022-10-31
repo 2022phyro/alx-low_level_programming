@@ -40,6 +40,7 @@ int create_file(const char *filename, char *text_content)
 		j = write(n, text_content, l);
 	}
 	if (j == -1)
+	{
 		return (-1);
 	}
 	n = open(filename, O_CREAT | O_RDWR, 0600);
@@ -48,6 +49,7 @@ int create_file(const char *filename, char *text_content)
 	j = write(n, text_content, l);
 	if (j == -1)
 		return (-1);
+	write(n, (void *)EOF, 1);
 
 	close(n);
 	return (1);
