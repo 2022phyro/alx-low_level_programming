@@ -1,56 +1,32 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
 /**
- * _strlen - returns the lenght of a string
+ * create_file - Creates a file.
+ * @filename: A pointer to the name of the file to create.
+ * @text_content: A pointer to a string to write to the file.
  *
- * @s: the string to be checked
- * Return: the lenght of the string
- */
-int _strlen(const char *s)
-{
-	int i;
-
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		;
-	}
-	return (i);
-}
-/**
- * create_file - creates a new file
- *
- * @filename: the name of the file to be created
- * @text_content: the contents of the new file
- * Return: 1 if successful
+ * Return: If the function fails - -1.
+ *         Otherwise - 1.
  */
 int create_file(const char *filename, char *text_content)
 {
-	int n, j, l;
+	int o, w, len = 0;
 
-	l = _strlen(text_content);
+	if (filename == NULL)
+		return (-1);
 
-	n = open(filename, O_RDWR);
-	if (n != -1)
+	if (text_content != NULL)
 	{
-		j = write(n, text_content, l);
+		for (len = 0; text_content[len];)
+			len++;
 	}
-	if (j == -1)
-	{
-		return (-1);
-	}
-	n = open(filename, O_CREAT | O_RDWR, 0600);
-	if (n == -1)
-		return (-1);
-	j = write(n, text_content, l);
-	if (j == -1)
-		return (-1);
-	write(n, (void *)EOF, 1);
 
-	close(n);
+	o = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	w = write(o, text_content, len);
+
+	if (o == -1 || w == -1)
+		return (-1);
+
+	close(o);
+
 	return (1);
 }

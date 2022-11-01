@@ -1,58 +1,33 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
 /**
- * _strlen - gives the lenghtof a string
+ * append_text_to_file - Appends text at the end of a file.
+ * @filename: A pointer to the name of the file.
+ * @text_content: The string to add to the end of the file.
  *
- * @s: the string to find its lenght
- * Return: string lenght
- */
-int _strlen(const char *s)
-{
-	int i;
-
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		;
-	}
-	return (i);
-}
-/**
- * append_text_to_file - appends text to the end of file
- *
- * @filename: the name of the file
- * @text_content: the content to be appended
- * Return: 1 if success
+ * Return: If the function fails or filename is NULL - -1.
+ *         If the file does not exist the user lacks write permissions - -1.
+ *         Otherwise - 1.
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int n, j, l;
+	int o, w, len = 0;
 
-	l = _strlen(text_content);
 	if (filename == NULL)
 		return (-1);
 
-	n = open(filename, O_APPEND | O_WRONLY);
-	if (n == -1)
+	if (text_content != NULL)
 	{
+		for (len = 0; text_content[len];)
+			len++;
+	}
+
+	o = open(filename, O_WRONLY | O_APPEND);
+	w = write(o, text_content, len);
+
+	if (o == -1 || w == -1)
 		return (-1);
-	}
-	if (text_content == NULL)
-	{
-		;
-	}
-	else
-	{
-		j = write(n, text_content, l);
-		if (j == -1)
-		return (-1);
-	}
-	close(n);
+
+	close(o);
+
 	return (1);
-
-
 }

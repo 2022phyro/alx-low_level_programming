@@ -23,9 +23,10 @@ int main(int argc, char **argv)
 	n = open(argv[1], O_RDONLY);
 	if (n == -1)
 	{
-		dprintf(2, " Can't read from file ""NAME_OF_THE_FILE\n");
+		dprintf(2, "Can't read from file %s\n", argv[1]);
 		exit(98);
 
 	}
+
 
 }
