@@ -24,7 +24,7 @@ It contains the function prototypes of all the functions used
 * ### _Files with a program as a target_ :page_with_curl:
 |**FILE**|*PROGRAM FUNCTION*|
 |:---|:---:|
-|[3-cp.c](./3-cp.c)|Contains a program that mimicks the cp function|
+|[3-cp.c](./3-cp.c)|Contains a program that mimicks the cp command on the linux terminal|
 |[100-elf_header.c](./100-elf_header.c)| Displays the information contained in the elf header at the start of an elf file| 
 
 ## See Also
