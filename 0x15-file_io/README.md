@@ -10,7 +10,7 @@ This directory contains knowledge and practice work on the topic File Input and 
 * [putchar](./_putchar.c): Serves to print out our information to standard output
 
 ## Header files :scroll:
-### [main.h](./main.h)
+* [main.h](./main.h)
 It contains the function prototypes of all the functions used
 
 ## Contents
