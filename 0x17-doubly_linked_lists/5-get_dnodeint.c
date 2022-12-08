@@ -8,7 +8,7 @@
 size_t len(dlistint_t *h)
 {
 	size_t i = 0;
-	
+
 	while (h)
 	{
 		i++;
@@ -21,7 +21,7 @@ size_t len(dlistint_t *h)
  *
  * @head: the head node
  * @index: the index
- * Returns: the index
+ * Return: the index
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
