@@ -21,6 +21,7 @@ int main(void)
     hash_table_set(ht, "Betty", "Cool");
     hash_table_set(ht, "98", "Battery Street");
     hash_table_set(ht, "cd", "isfun");
+     hash_table_set(ht, "vivency", "isfun");
     hash_table_set(ht, "dram", "test");
     hash_table_set(ht, "hetairas", "also");
     hash_table_set(ht, "mentioner", "also");
@@ -42,8 +43,8 @@ int main(void)
     printf("%s:%s\n", "c", value);
     value = hash_table_get(ht, "javascript");
     printf("%s:%s\n", "javascript", value);
-    value = hash_table_get(ht, "dram");
-    printf("%s:%s\n", "dram", value);
+    value = hash_table_get(ht, "vivency");
+    printf("%s:%s\n", "vivency", value);
     value = hash_table_get(ht, "hetairas");
     printf("%s:%s\n", "hetairas", value);
     value = hash_table_get(ht, "mentioner");
