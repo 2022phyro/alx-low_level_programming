@@ -28,8 +28,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(temp->key, key) == 0)
 		{
+			free(temp->value);
 			temp->value = val;
-			free(val);
 			free(kei);
 			return (1);
 		}
