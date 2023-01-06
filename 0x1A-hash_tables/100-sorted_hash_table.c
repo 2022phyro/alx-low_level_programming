@@ -12,7 +12,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 		free(ht);
 		return (NULL);
 	}
-	ht->array = malloc(sizeof(shash_node-t) * size);
+	ht->array = malloc(sizeof(shash_node-t *) * size);
 	if (ht->array == NULL)
 	{
 		free(ht->array);
