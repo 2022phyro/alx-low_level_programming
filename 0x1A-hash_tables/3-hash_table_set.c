@@ -11,40 +11,42 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
 	hash_node_t *new_v, *temp;
-	char *val, *kei;
+	char *val;
+	hash_table_t *head;
 
+	if (ht == NULL || key == NULL || value == NULL || *key == '\0')
+		return (0);
+	head = ht;
 	index = key_index((const unsigned char *)key, ht->size);
 	val = strdup(value);
-	kei = strdup(key);
-	if (val == NULL || key == NULL || kei == NULL || value == NULL
-			|| ht == NULL || *key == '\0' || index >= ht->size)
-	{
-		free(val);
-		free(kei);
-		return(0);
-	}
+	if (val == NULL)
+		return (0);
 	temp = ht->array[index];
-	for (; ht->array[index];ht->array[index] = ht->array[index]->next)
+	if (temp)
 	{
-		if (strcmp(ht->array[index]->key, key) == 0)
+		for (; temp != NULL; temp = temp->next)
 		{
-			free(ht->array[index]->value);
-			ht->array[index]->value = val;
-			free(kei);
-			return (1);
+			if (strcmp(temp->key, key) == 0)
+			{
+				temp->value = val;
+				return (1);
+			}
 		}
 	}
 	new_v = malloc(sizeof(hash_node_t));
 	if (new_v == NULL)
 	{
-		free(kei);
+		free(val);
+		return (0);
+	}
+	new_v->key = strdup(key);
+	if (new_v->key == NULL)
+	{
 		free(val);
 		return (0);
 	}
 	new_v->value = val;
-	new_v->next = temp;
-	new_v->key = kei;
-	ht->array[index] = new_v;
+	new_v->next = head->array[index];
+	head->array[index] = new_v;
 	return (1);
-
 }
