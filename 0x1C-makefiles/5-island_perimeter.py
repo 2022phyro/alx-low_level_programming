@@ -4,30 +4,22 @@
 
 def island_perimeter(grid):
     """This function attempts to get the perimeter of an island"""
-    if not grid:
-        return
     ans = 0
-    mark1 = 0
-    mark2 = 0
-    flag = False
-    for i in range(len(grid)):
-        m = len(grid[i])
-        for j in range(m):
+    let = len(grid)
+    size = len(grid[0])
+    for i in range(let):
+        for j in range(size):
             if grid[i][j] == 1:
-                flag = True
-                ans += 4
-                mark2 = j
-                break
-        if flag is True:
-            mark1 = i
-            break
-    if (mark1 == 0) and (mark2 == 0):
-        return
-    for m in range(mark2 + 1, len(grid[mark1])):
-        if grid[mark1][m] == 1 and grid[mark1][m - 1] == 1:
-            ans += 2
-    for i in range(mark1 + 1, len(grid)):
-        for j in range(len(grid[i])):
-            if grid[i][j] == 1:
-                ans += 2
+                if j == 0 or j == size - 1:
+                    ans += 1
+                if i == 0 or i == let - 1:
+                    ans += 1
+                if (i - 1 >= 0) and grid[i - 1][j] == 0:
+                    ans += 1
+                if (i + 1 < let) and grid[i + 1][j] == 0:
+                    ans += 1
+                if (j - 1 >= 0) and grid[i][j - 1] == 0:
+                    ans += 1
+                if (j + 1 < size) and grid[i][j + 1] == 0:
+                    ans += 1
     return ans
