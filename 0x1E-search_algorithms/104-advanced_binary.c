@@ -11,7 +11,7 @@ int advanced_binary(int *array, size_t size, int value)
 {
 	if (array == NULL || size == 0)
 		return (-1);
-	return (b_searc(array, 0, size - 1, value, -1));
+	return (b_searc(array, 0, size - 1, value));
 }
 /**
  * b_searc - This searches an array using binary search
@@ -19,16 +19,13 @@ int advanced_binary(int *array, size_t size, int value)
  * @array: the array to be searched
  * @start: the starting index
  * @end: the ending index
- * @id: the current index
  * @value: the value
  * Return: the index or -1
  */
-int b_searc(int *array, int start, int end, int value, int id)
+int b_searc(int *array, int start, int end, int value)
 {
-	int mid, i, *p, mark;
+	int mid, i, mark;
 
-	p = &id;
-	mark = id;
 	if (array[start] == value && start == end)
 		return (start);
 	if (end >= start)
@@ -38,18 +35,14 @@ int b_searc(int *array, int start, int end, int value, int id)
 			printf("%d%s", array[i], i == end ? "\n" : ", ");
 		mid = (end + start) / 2;
 		if (array[mid] == value)
-		{
-			*p = mid;
-			if (mark == -1)
-				return (b_searc(array, start, mid, value, *p));
-			if (mid < mark)
-				return (b_searc(array, start, mid, value, *p));
+		{	
+			mark = b_searc(array, start, mid, value);
+			return (mark < mid ? mark : mid);
 		}
 		if (value < array[mid])
-			return (b_searc(array, start, mid - 1, value, *p));
+			return (b_searc(array, start, mid - 1, value));
 		if (value > array[mid])
-			return (b_searc(array, mid + 1, end, value, *p));
-		return (mid);
+			return (b_searc(array, mid + 1, end, value));
 	}
 	return (-1);
 
