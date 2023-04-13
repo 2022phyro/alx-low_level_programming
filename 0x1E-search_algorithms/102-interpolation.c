@@ -11,14 +11,14 @@ int interpolation_search(int *array, size_t size, int value)
 {
 	if (array == NULL || size == 0)
 		return (-1);
-	return i_search(array, 0, size - 1, value);
+	return (i_search(array, 0, size - 1, value));
 }
 /**
  * i_search - searches using interpolation
- * @array: the array to be searched
+ * @arr: the array to be searched
  * @st: the starting index
  * @ed: the ending index
- * @value: the value
+ * @val: the value
  * Return: the index or -1 if it's not found
  */
 int i_search(int *arr, int st, int ed, int val)
@@ -27,7 +27,7 @@ int i_search(int *arr, int st, int ed, int val)
 
 	pos = st + (((double)(ed - st) / (arr[ed] - arr[st])) *
 			(val - arr[st]));
-	printf("Value checked array[%d] ", pos);
+	printf("Value checked array[%lu] ", pos);
 	if (st <= ed && val >= arr[st] && val <= arr[ed])
 	{
 		printf("= [%d]\n", arr[pos]);
