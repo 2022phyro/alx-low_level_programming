@@ -17,7 +17,7 @@ int binary_search(int *array, size_t size, int value)
  * b_search - This searches an array using binary search
  *
  * @array: the array to be searched
- * @start the starting index
+ * @start: the starting index
  * @end: the ending index
  * @value: the value
  * Return: the index or -1
@@ -25,6 +25,7 @@ int binary_search(int *array, size_t size, int value)
 int b_search(int *array, int start, int end, int value)
 {
 	int mid, i;
+
 	if (end >= start)
 	{
 		printf("Searching in array: ");
