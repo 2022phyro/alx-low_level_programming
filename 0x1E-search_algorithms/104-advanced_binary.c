@@ -35,9 +35,9 @@ int b_searc(int *array, int start, int end, int value)
 			printf("%d%s", array[i], i == end ? "\n" : ", ");
 		mid = (end + start) / 2;
 		if (array[mid] == value)
-		{	
-			mark = b_searc(array, start, mid, value);
-			return (mark < mid ? mark : mid);
+		{
+			mark = b_searc(array, start, mid - 1, value);
+			return ((mark < mid && mark != -1) ? mark : mid);
 		}
 		if (value < array[mid])
 			return (b_searc(array, start, mid - 1, value));
